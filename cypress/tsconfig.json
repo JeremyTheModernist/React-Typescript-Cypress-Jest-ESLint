@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig.json", // extends tsconfig from the root directory
+  "compilerOptions": {
+    "baseUrl": "../node_modules", // dictates that any non-relative modules, like cypress, should use this url to resolve to
+    "noEmit": true, // running tsc should not emit any output.
+    // be explicit about types included
+    // to avoid clashing with Jest types
+    "types": ["cypress"],
+    "isolatedModules": false // files don't have to contain imports
+  },
+  "include": ["cypress", "./**/*.ts"]
+}

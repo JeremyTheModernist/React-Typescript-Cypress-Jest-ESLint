@@ -1,0 +1,17 @@
+{
+  "plugins": ["cypress"],
+  "env": {
+    "cypress/globals": true // provides cypress global variables
+  },
+  "extends": ["plugin:cypress/recommended"],
+  "overrides": [
+    {
+      // specifies that for any .spec.ts files jest expect will not interfere
+      "files": ["*.spec.ts"],
+      "rules": {
+        "no-unused-expressions": 0,
+        "jest/valid-expect": 0
+      }
+    }
+  ]
+}
